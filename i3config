@@ -24,11 +24,17 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+#set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
+#bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+#bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+#custom volume controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec --no-startup-id amixer -q set Master 5%-
+bindsym XF86AudioMute exec --no-startup-id amixer -q set Master toggle
+
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -89,8 +95,8 @@ bindsym $mod+space focus mode_toggle
 bindsym $mod+a focus parent
 
 # Define names for default workspaces
-set $ws1 "DEV"
-set $ws2 "Browser"
+set $ws1 "1: DEV"
+set $ws2 "2: Browser"
 set $ws3 "3"
 set $ws4 "4"
 set $ws5 "5"
@@ -98,7 +104,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "Music"
+set $ws10 "10: Music"
 
 # Switch to workspace
 bindsym $mod+1 workspace $ws1
@@ -157,7 +163,8 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar
 bar {
-        status_command i3status
+        #status_command i3status
+	status_command i3blocks
 }
 
 # Screen brightness controls
@@ -167,15 +174,12 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 # Touchpad controls
 bindsym XF86TouchpadToggle exec /some/path/toggletouchpad.sh # toggle touchpad
 
-# Media player controls
-bindsym XF86AudioPlay exec playerctl play
-bindsym XF86AudioPause exec playerctl pause
-bindsym XF86AudioNext exec playerctl next
-bindsym XF86AudioPrev exec playerctl previous
-
 
 exec_always google-chrome
 assign [class="Google-chrome"] $ws2
+
+exec_always spotify
+assign [class="Spotify"] $ws10
 
 exec_always feh --bg-scale /home/marco/Bilder/penguin_wallpaper.png
 
@@ -183,3 +187,12 @@ exec_always feh --bg-scale /home/marco/Bilder/penguin_wallpaper.png
 
 exec_always xrandr --output eDP-1 --primary --mode 1920x1080 --pos 0x1080 --rotate normal --output DP-1 --off --output HDMI-1 --off --output DP-2 --mode 1920x1080 --pos 0x0 --rotate normal --output HDMI-2 --off
 
+# Set gaps
+gaps inner 5
+gaps outer 5  
+
+
+bindsym $mod+Shift+d exec ~/.config/i3/cycle_displays.sh
+
+exec --no-startup-id xrandr --output eDP-1 --auto --output DP-2 --auto --above eDP-1
+#exec --no-startup-id autorandr --change
