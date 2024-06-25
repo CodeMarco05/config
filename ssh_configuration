@@ -1,0 +1,53 @@
+# Step 1: Generate an SSH Key Pair
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/my_new_key
+
+# Step 2: Add the SSH Key to the SSH Agent and macOS Keychain
+ssh-add --apple-use-keychain ~/.ssh/my_new_key
+
+# Step 3: Edit (or create) the ~/.ssh/config file
+nano ~/.ssh/config
+
+# Add the following lines to the ~/.ssh/config file:
+Host server_alias
+    HostName server_ip
+    User username
+    AddKeysToAgent yes
+    UseKeychain yes
+    IdentityFile ~/.ssh/my_new_key
+
+# Step 4: Connect to the Server
+ssh server_alias
+
+----------------------------------------------Linux
+# Step 1: Generate an SSH Key Pair
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com" -f ~/.ssh/my_new_key
+
+# Step 2: Start the SSH Agent and Add the SSH Key
+# Add these lines to ~/.bashrc or ~/.zshrc
+echo '
+# Start the SSH agent if it’s not already running
+if ! pgrep -u "$USER" ssh-agent > /dev/null; then
+    eval "$(ssh-agent -s)"
+fi
+
+# Add your SSH private key to the agent
+if ! ssh-add -l | grep -q ~/.ssh/my_new_key; then
+    ssh-add ~/.ssh/my_new_key
+fi
+' >> ~/.bashrc  # Replace ~/.bashrc with ~/.zshrc if you use Zsh
+
+# Apply the changes
+source ~/.bashrc  # Or source ~/.zshrc if you use Zsh
+
+# Step 3: Edit (or create) the ~/.ssh/config file
+nano ~/.ssh/config
+
+# Add the following lines to ~/.ssh/config
+Host server_alias
+    HostName server_ip
+    User username
+    AddKeysToAgent yes
+    IdentityFile ~/.ssh/my_new_key
+
+# Step 4: Connect to the Server
+ssh server_alias
