@@ -12,12 +12,14 @@
 #
 #   for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done
 
+
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'
 [[ ! -o 'aliases'         ]] || p10k_config_opts+=('aliases')
 [[ ! -o 'sh_glob'         ]] || p10k_config_opts+=('sh_glob')
 [[ ! -o 'no_brace_expand' ]] || p10k_config_opts+=('no_brace_expand')
 'builtin' 'setopt' 'no_aliases' 'no_sh_glob' 'brace_expand'
+
 
 () {
   emulate -L zsh -o extended_glob
@@ -28,6 +30,7 @@
 
   # Zsh >= 5.1 is required.
   [[ $ZSH_VERSION == (5.<1->*|<6->.*) ]] || return
+
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
@@ -110,7 +113,7 @@
     time                    # current time
     # =========================[ Line #2 ]=========================
     newline                 # \n
-    ip                    # ip address and bandwidth usage for a specified network interface
+    # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
     # proxy                 # system-wide http/https/ftp proxy
     # battery               # internal battery
@@ -154,7 +157,7 @@
   # '─'. The last two make it easier to see the alignment between left and right prompt and to
   # separate prompt from command output. You might want to set POWERLEVEL9K_PROMPT_ADD_NEWLINE=false
   # for more compact prompt if using this option.
-  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='─'
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR='·'
   typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_BACKGROUND=
   typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_GAP_BACKGROUND=
   if [[ $POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_CHAR != ' ' ]]; then
@@ -1712,7 +1715,7 @@
   #   - always:   Trim down prompt when accepting a command line.
   #   - same-dir: Trim down prompt when accepting a command line unless this is the first command
   #               typed after changing current working directory.
-  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=off
+  typeset -g POWERLEVEL9K_TRANSIENT_PROMPT=always
 
   # Instant prompt mode.
   #
