@@ -15,6 +15,8 @@ return {
 					"docker_compose_language_service",
 					"rust_analyzer",
 					"marksman",
+					"clangd",
+          "jdtls",
 				},
 			})
 		end,
@@ -39,9 +41,21 @@ return {
 			lspconfig.rust_analyzer.setup({
 				capabilities = capabilities,
 			})
+			lspconfig.clangd.setup({
+				capabilities = capabilities,
+			})
 
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, {})
+
+      -- Java
+      lspconfig.jdtls.setup({
+        capabilities = capabilities,
+      })
+
+			-- Key mappings for LSP functions
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true })
+			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
+			vim.keymap.set("n", "<leader>gd", vim.lsp.buf.definition, { noremap = true, silent = true }) -- Go to Definition
+			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true }) -- Rename
 		end,
 	},
 }
