@@ -11,8 +11,6 @@ return {
 			require("mason-lspconfig").setup({
 				ensure_installed = {
 					"lua_ls",
-					"dockerls",
-					"docker_compose_language_service",
 					"rust_analyzer",
 					"marksman",
 					"clangd",
