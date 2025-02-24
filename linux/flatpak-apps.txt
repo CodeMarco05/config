@@ -1,0 +1,4 @@
+com.discordapp.Discord
+com.google.Chrome
+com.mattjakeman.ExtensionManager
+com.spotify.Client
