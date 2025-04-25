@@ -1,0 +1,10 @@
+=== FLATPAK APPLICATIONS ===
+Zen	app.zen_browser.zen	1.11.5b	stable	system
+Discord	com.discordapp.Discord	0.0.92	stable	system
+Portal for Teams	com.github.IsmaelMartinez.teams_for_linux	2.0.11	stable	system
+Google Chrome	com.google.Chrome	135.0.7049.114-1	stable	system
+Extension Manager	com.mattjakeman.ExtensionManager	0.6.3	stable	system
+Spotify	com.spotify.Client	1.2.59.514.g834e17d4	stable	system
+Thunderbird	org.mozilla.Thunderbird	128.9.2esr	stable	system
+
+=== DNF INSTALLED PACKAGES ===

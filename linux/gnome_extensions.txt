@@ -1,0 +1,189 @@
+=== INSTALLED GNOME EXTENSIONS ===
+blur-my-shell@aunetx
+  Name: Blur my Shell
+  Description: Adds a blur look to different parts of the GNOME Shell, including the top panel, dash and overview.
+
+You can support my work by sponsoring me on:
+- github: https://github.com/sponsors/aunetx
+- ko-fi: https://ko-fi.com/aunetx
+
+If you use Ubuntu, you may want to change the radius of the corner effect for Dash-to-Dock in preferences, else you may see unpleasantly mixed radii in your dock.
+
+Note: if the extension shows an error after updating, please make sure to restart your session to see if it persists. This is due to a bug in gnome shell, which I can't fix by myself.
+  Path: /home/marco/.local/share/gnome-shell/extensions/blur-my-shell@aunetx
+  URL: https://github.com/aunetx/blur-my-shell
+  Version: 68
+  Enabled: Yes
+  State: ACTIVE
+
+dash-to-dock@micxgx.gmail.com
+  Name: Dash to Dock
+  Description: A dock for the Gnome Shell. This extension moves the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops. Side and bottom placement options are available.
+  Path: /home/marco/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
+  URL: https://micheleg.github.io/dash-to-dock/
+  Original author: micxgx@gmail.com
+  Version: 100
+  Enabled: Yes
+  State: ACTIVE
+
+status-icons@gnome-shell-extensions.gcampax.github.com
+  Name: Status Icons
+  Description: Show status icons in the top bar
+  Path: /home/marco/.local/share/gnome-shell/extensions/status-icons@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 2
+  Enabled: Yes
+  State: ACTIVE
+
+lockscreen-extension@pratap.fastmail.fm
+  Name: Lockscreen Extension
+  Description: Customize GNOME's Lockscreen
+  Path: /home/marco/.local/share/gnome-shell/extensions/lockscreen-extension@pratap.fastmail.fm
+  URL: https://github.com/PRATAP-KUMAR/lockscreen-extension
+  Version: 8
+  Enabled: Yes
+  State: INITIALIZED
+
+system-monitor@gnome-shell-extensions.gcampax.github.com
+  Name: System Monitor
+  Description: Monitor system from the top bar
+  Path: /home/marco/.local/share/gnome-shell/extensions/system-monitor@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 6
+  Enabled: Yes
+  State: ACTIVE
+
+appindicatorsupport@rgcjonas.gmail.com
+  Name: AppIndicator and KStatusNotifierItem Support
+  Description: Adds AppIndicator, KStatusNotifierItem and legacy Tray icons support to the Shell
+  Path: /home/marco/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+  URL: https://github.com/ubuntu/gnome-shell-extension-appindicator
+  Version: 59
+  Enabled: Yes
+  State: ACTIVE
+
+status-area-horizontal-spacing@mathematical.coffee.gmail.com
+  Name: Status Area Horizontal Spacing
+  Description: Reduce the horizontal spacing between icons in the top-right status area
+  Path: /home/marco/.local/share/gnome-shell/extensions/status-area-horizontal-spacing@mathematical.coffee.gmail.com
+  URL: https://gitlab.com/p91paul/status-area-horizontal-spacing-gnome-shell-extension
+  Version: 29
+  Enabled: Yes
+  State: ACTIVE
+
+=== ALL GNOME EXTENSIONS ===
+blur-my-shell@aunetx
+  Name: Blur my Shell
+  Description: Adds a blur look to different parts of the GNOME Shell, including the top panel, dash and overview.
+
+You can support my work by sponsoring me on:
+- github: https://github.com/sponsors/aunetx
+- ko-fi: https://ko-fi.com/aunetx
+
+If you use Ubuntu, you may want to change the radius of the corner effect for Dash-to-Dock in preferences, else you may see unpleasantly mixed radii in your dock.
+
+Note: if the extension shows an error after updating, please make sure to restart your session to see if it persists. This is due to a bug in gnome shell, which I can't fix by myself.
+  Path: /home/marco/.local/share/gnome-shell/extensions/blur-my-shell@aunetx
+  URL: https://github.com/aunetx/blur-my-shell
+  Version: 68
+  Enabled: Yes
+  State: ACTIVE
+
+dash-to-dock@micxgx.gmail.com
+  Name: Dash to Dock
+  Description: A dock for the Gnome Shell. This extension moves the dash out of the overview transforming it in a dock for an easier launching of applications and a faster switching between windows and desktops. Side and bottom placement options are available.
+  Path: /home/marco/.local/share/gnome-shell/extensions/dash-to-dock@micxgx.gmail.com
+  URL: https://micheleg.github.io/dash-to-dock/
+  Original author: micxgx@gmail.com
+  Version: 100
+  Enabled: Yes
+  State: ACTIVE
+
+status-icons@gnome-shell-extensions.gcampax.github.com
+  Name: Status Icons
+  Description: Show status icons in the top bar
+  Path: /home/marco/.local/share/gnome-shell/extensions/status-icons@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 2
+  Enabled: Yes
+  State: ACTIVE
+
+lockscreen-extension@pratap.fastmail.fm
+  Name: Lockscreen Extension
+  Description: Customize GNOME's Lockscreen
+  Path: /home/marco/.local/share/gnome-shell/extensions/lockscreen-extension@pratap.fastmail.fm
+  URL: https://github.com/PRATAP-KUMAR/lockscreen-extension
+  Version: 8
+  Enabled: Yes
+  State: INITIALIZED
+
+system-monitor@gnome-shell-extensions.gcampax.github.com
+  Name: System Monitor
+  Description: Monitor system from the top bar
+  Path: /home/marco/.local/share/gnome-shell/extensions/system-monitor@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Version: 6
+  Enabled: Yes
+  State: ACTIVE
+
+appindicatorsupport@rgcjonas.gmail.com
+  Name: AppIndicator and KStatusNotifierItem Support
+  Description: Adds AppIndicator, KStatusNotifierItem and legacy Tray icons support to the Shell
+  Path: /home/marco/.local/share/gnome-shell/extensions/appindicatorsupport@rgcjonas.gmail.com
+  URL: https://github.com/ubuntu/gnome-shell-extension-appindicator
+  Version: 59
+  Enabled: Yes
+  State: ACTIVE
+
+status-area-horizontal-spacing@mathematical.coffee.gmail.com
+  Name: Status Area Horizontal Spacing
+  Description: Reduce the horizontal spacing between icons in the top-right status area
+  Path: /home/marco/.local/share/gnome-shell/extensions/status-area-horizontal-spacing@mathematical.coffee.gmail.com
+  URL: https://gitlab.com/p91paul/status-area-horizontal-spacing-gnome-shell-extension
+  Version: 29
+  Enabled: Yes
+  State: ACTIVE
+
+apps-menu@gnome-shell-extensions.gcampax.github.com
+  Name: Apps Menu
+  Description: Add a category-based menu for apps.
+This extension is part of Classic Mode and is officially supported by GNOME. Please do not report bugs using the form below, use GNOME's GitLab instance instead.
+  Path: /usr/share/gnome-shell/extensions/apps-menu@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Enabled: No
+  State: INITIALIZED
+
+background-logo@fedorahosted.org
+  Name: Background Logo
+  Description: Overlay a tasteful logo on the background to enhance the user experience
+  Path: /usr/share/gnome-shell/extensions/background-logo@fedorahosted.org
+  URL: https://pagure.io/background-logo-extension
+  Enabled: No
+  State: INITIALIZED
+
+launch-new-instance@gnome-shell-extensions.gcampax.github.com
+  Name: Launch new instance
+  Description: Always launch a new instance when clicking in the dash or the application view.
+This extension is part of Classic Mode and is officially supported by GNOME. Please do not report bugs using the form below, use GNOME's GitLab instance instead.
+  Path: /usr/share/gnome-shell/extensions/launch-new-instance@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Enabled: No
+  State: INITIALIZED
+
+places-menu@gnome-shell-extensions.gcampax.github.com
+  Name: Places Status Indicator
+  Description: Add a menu for quickly navigating places in the system.
+This extension is part of Classic Mode and is officially supported by GNOME. Please do not report bugs using the form below, use GNOME's GitLab instance instead.
+  Path: /usr/share/gnome-shell/extensions/places-menu@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Enabled: No
+  State: INITIALIZED
+
+window-list@gnome-shell-extensions.gcampax.github.com
+  Name: Window List
+  Description: Display a window list at the bottom of the screen.
+This extension is part of Classic Mode and is officially supported by GNOME. Please do not report bugs using the form below, use GNOME's GitLab instance instead.
+  Path: /usr/share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com
+  URL: https://gitlab.gnome.org/GNOME/gnome-shell-extensions
+  Enabled: No
+  State: INITIALIZED

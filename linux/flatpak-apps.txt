@@ -1,4 +1,7 @@
+app.zen_browser.zen
 com.discordapp.Discord
+com.github.IsmaelMartinez.teams_for_linux
 com.google.Chrome
 com.mattjakeman.ExtensionManager
 com.spotify.Client
+org.mozilla.Thunderbird
