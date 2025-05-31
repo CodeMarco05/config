@@ -3,5 +3,7 @@ com.discordapp.Discord
 com.github.IsmaelMartinez.teams_for_linux
 com.google.Chrome
 com.mattjakeman.ExtensionManager
+com.obsproject.Studio
 com.spotify.Client
+org.bluej.BlueJ
 org.mozilla.Thunderbird
