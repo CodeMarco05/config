@@ -12,7 +12,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			--vim.cmd.colorscheme("nightfly")
+		  --vim.cmd.colorscheme("nightfly")
 		end,
 	},
 	{
@@ -31,7 +31,7 @@ return {
 					notify = false,
 				},
 			})
-			--vim.cmd.colorscheme("catppuccin") -- Apply the theme
+			vim.cmd.colorscheme("catppuccin") -- Apply the theme
 		end,
 	},
 	{
@@ -44,7 +44,7 @@ return {
 				--style = "light",
 			})
 			-- Enable theme
-			require("onedark").load()
+			--require("onedark").load()
 		end,
 	},
 }
