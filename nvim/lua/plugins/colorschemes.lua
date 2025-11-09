@@ -12,7 +12,7 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-		  --vim.cmd.colorscheme("nightfly")
+			--vim.cmd.colorscheme("nightfly")
 		end,
 	},
 	{
@@ -31,7 +31,7 @@ return {
 					notify = false,
 				},
 			})
-			vim.cmd.colorscheme("catppuccin") -- Apply the theme
+			--vim.cmd.colorscheme("catppuccin") -- Apply the theme
 		end,
 	},
 	{
@@ -45,6 +45,19 @@ return {
 			})
 			-- Enable theme
 			--require("onedark").load()
+		end,
+	},
+	{
+		"neanias/everforest-nvim",
+		version = false,
+		lazy = false,
+		priority = 1000, -- make sure to load this before all the other start plugins
+		-- Optional; default configuration will be used if setup isn't called.
+		config = function()
+			require("everforest").setup({
+				-- Your config here
+			})
+      require("everforest").load()
 		end,
 	},
 }
