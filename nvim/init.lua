@@ -18,4 +18,5 @@ vim.opt.rtp:prepend(lazypath)
 
 --local opts = {}
 require("vim-options")
+require("markdown-keybinds")
 require("lazy").setup("plugins")
