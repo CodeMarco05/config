@@ -12,10 +12,9 @@ return {
 			direction = "float",
 
 			float_opts = {
-        border = 'curved',
+				border = "curved",
 				winblend = 0,
-        start_in_insert = true,
-
+				start_in_insert = true,
 			},
 
 			-- Floating window options

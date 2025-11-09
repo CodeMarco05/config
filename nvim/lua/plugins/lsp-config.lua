@@ -25,30 +25,18 @@ return {
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-			local lspconfig = require("lspconfig")
-
-			lspconfig.lua_ls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.dockerls.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.docker_compose_language_service.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.rust_analyzer.setup({
-				capabilities = capabilities,
-			})
-			lspconfig.clangd.setup({
+			-- Set global capabilities for all servers
+			vim.lsp.config('*', {
 				capabilities = capabilities,
 			})
 
-
-
-      -- Java
-      lspconfig.jdtls.setup({
-        capabilities = capabilities,
-      })
+			-- Enable LSP servers
+			vim.lsp.enable('lua_ls')
+			vim.lsp.enable('dockerls')
+			vim.lsp.enable('docker_compose_language_service')
+			vim.lsp.enable('rust_analyzer')
+			vim.lsp.enable('clangd')
+			vim.lsp.enable('jdtls')
 
 			-- Key mappings for LSP functions
 			vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true })

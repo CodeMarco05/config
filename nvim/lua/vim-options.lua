@@ -42,9 +42,9 @@ vim.api.nvim_set_keymap("n", "<ScrollWheelDown>", "2j", { noremap = true })
 -- end, { desc = "Set spell language to German" })
 
 -- vim.keymap.set("n", "<leader>se", function()
-	-- vim.opt.spelllang = "en"
-	-- vim.cmd("set spell")
-	-- print("Spell language set to English")
+-- vim.opt.spelllang = "en"
+-- vim.cmd("set spell")
+-- print("Spell language set to English")
 -- end, { desc = "Set spell language to English" })
 
 --vim.diagnostic.config({
