@@ -3,51 +3,36 @@ return {
 		"mfussenegger/nvim-dap",
 		dependencies = {
 			"rcarriga/nvim-dap-ui",
+			"mfussenegger/nvim-dap",
+			"nvim-neotest/nvim-nio",
 		},
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
 
-			-- Initialize dapui
-			dapui.setup()
-
-			dap.adapters.lldb = {
+			local dap = require("dap")
+			dap.adapters.codelldb = {
 				type = "executable",
-				command = "/usr/bin/lldb-dap", -- Use lldb-dap, not lldb
-				name = "lldb",
-			}
+				command = "/home/marco/Documents/codelldb-linux-x64/extension/adapter/codelldb", -- or if not in $PATH: "/absolute/path/to/codelldb"
 
+				-- On windows you may have to uncomment this:
+				-- detached = false,
+			}
 			dap.configurations.cpp = {
 				{
-					name = "Launch",
-					type = "lldb",
+					name = "Launch file",
+					type = "codelldb",
 					request = "launch",
 					program = function()
 						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
 					end,
-					cwd = vim.fn.getcwd(),
-					stopOnEntry = true, -- TEMPORARILY set to true for testing
-					args = {},
-				},
-			}
-
-			-- C configuration (same as C++)
-			dap.configurations.c = dap.configurations.cpp
-
-			-- Rust configuration
-			dap.configurations.rust = {
-				{
-					name = "Launch",
-					type = "lldb",
-					request = "launch",
-					program = function()
-						return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/target/debug/", "file")
-					end,
 					cwd = "${workspaceFolder}",
 					stopOnEntry = false,
-					args = {},
 				},
 			}
+
+			-- Initialize dapui
+			dapui.setup()
 
 			dap.listeners.before.attach.dapui_config = function()
 				dapui.open()
@@ -69,16 +54,5 @@ return {
 			vim.keymap.set("n", "<Leader>dsu", dap.step_out, {})
 			vim.keymap.set("n", "<Leader>dr", dap.repl.open, {})
 		end,
-	},
-	{
-		{
-			"nvim-neotest/neotest",
-			dependencies = {
-				"nvim-neotest/nvim-nio",
-				"nvim-lua/plenary.nvim",
-				"antoinemadec/FixCursorHold.nvim",
-				"nvim-treesitter/nvim-treesitter",
-			},
-		},
 	},
 }
