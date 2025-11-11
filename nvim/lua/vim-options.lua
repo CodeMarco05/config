@@ -11,15 +11,18 @@ vim.api.nvim_create_autocmd("FileType", {
 
 vim.g.mapleader = " "
 
---vim.opt.clipboard = "unnamedplus"
-
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+vim.opt.smartcase = true
 
 vim.api.nvim_set_keymap("n", "<Left>", "<C-w>h", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Right>", "<C-w>l", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Up>", "<C-w>k", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<Down>", "<C-w>j", { noremap = true, silent = true })
+
+
+vim.api.nvim_set_keymap("n", "<Leader>ns", ":nohlsearch<CR>", { noremap = true, silent = true })
 
 -- Open diagnostic float
 vim.keymap.set("n", "<Leader>e", function()

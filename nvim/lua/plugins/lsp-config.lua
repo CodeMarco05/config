@@ -15,6 +15,7 @@ return {
 					"marksman",
 					"clangd",
 					"jdtls",
+					"gopls",
 				},
 			})
 		end,
@@ -24,6 +25,7 @@ return {
 		lazy = false,
 		config = function()
 			local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
 			-- Setup each server with proper configuration using the new API
 			vim.lsp.config.lua_ls = {
 				capabilities = capabilities,
@@ -66,10 +68,25 @@ return {
 			})
 
 			-- Key mappings for LSP functions
-			vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true })
-			vim.keymap.set({ "n", "v" }, "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
-			vim.keymap.set("n", "gd", vim.lsp.buf.definition, { noremap = true, silent = true })
-			vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true })
+			vim.keymap.set("n", "K", vim.lsp.buf.hover, { noremap = true, silent = true, desc = "Hover" })
+			vim.keymap.set(
+				{ "n", "v" },
+				"<leader>ca",
+				vim.lsp.buf.code_action,
+				{ noremap = true, silent = true, desc = "Code action" }
+			)
+			vim.keymap.set(
+				"n",
+				"gd",
+				vim.lsp.buf.definition,
+				{ noremap = true, silent = true, desc = "Go to definiton" }
+			)
+			vim.keymap.set(
+				"n",
+				"<leader>rn",
+				vim.lsp.buf.rename,
+				{ noremap = true, silent = true, desc = "Rename in current buffer" }
+			)
 		end,
 	},
 }
