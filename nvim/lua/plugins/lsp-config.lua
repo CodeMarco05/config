@@ -16,6 +16,7 @@ return {
 					"clangd",
 					"jdtls",
 					"gopls",
+					--"sqlls",
 				},
 			})
 		end,
@@ -44,27 +45,39 @@ return {
 				capabilities = capabilities,
 			}
 
-			vim.lsp.config.dockerls = {
-				capabilities = capabilities,
-			}
-
-			vim.lsp.config.docker_compose_language_service = {
-				capabilities = capabilities,
-			}
-
 			vim.lsp.config.marksman = {
 				capabilities = capabilities,
 			}
+
+			vim.lsp.config.gopls = {
+				capabilities = capabilities,
+				cmd = { "gopls" },
+				filetypes = { "go", "gomod", "gowork", "gotmpl" },
+				root_dir = vim.fs.root(0, { "go.work", "go.mod", ".git" }),
+				settings = {
+					gopls = {
+						usePlaceholders = true,
+						completeUnimported = true,
+						analyses = {
+							unusedparams = true,
+						},
+					},
+				},
+			}
+
+			--vim.lsp.config.sqlls = {
+			--	capabilities = capabilities,
+			--}
 
 			-- Enable the servers
 			vim.lsp.enable({
 				"lua_ls",
 				"rust_analyzer",
+				"marksman",
 				"clangd",
 				"jdtls",
-				"dockerls",
-				"docker_compose_language_service",
-				"marksman",
+				"gopls",
+				--"sqlls",
 			})
 
 			-- Key mappings for LSP functions
