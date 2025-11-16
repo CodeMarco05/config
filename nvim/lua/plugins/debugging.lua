@@ -5,12 +5,12 @@ return {
 			"rcarriga/nvim-dap-ui",
 			"mfussenegger/nvim-dap",
 			"nvim-neotest/nvim-nio",
+			"leoluz/nvim-dap-go",
 		},
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
 
-			local dap = require("dap")
 			dap.adapters.codelldb = {
 				type = "executable",
 				command = "/home/marco/Documents/codelldb-linux-x64/extension/adapter/codelldb", -- or if not in $PATH: "/absolute/path/to/codelldb"
@@ -30,6 +30,21 @@ return {
 					stopOnEntry = false,
 				},
 			}
+
+			-- Setup Go debugging with nvim-dap-go
+			require("dap-go").setup({
+				dap_configurations = {
+					{
+						type = "go",
+						name = "Attach remote",
+						mode = "remote",
+						request = "attach",
+					},
+				},
+				delve = {
+					path = vim.fn.expand("~/go/bin/dlv"),
+				},
+			})
 
 			-- Initialize dapui
 			dapui.setup()
