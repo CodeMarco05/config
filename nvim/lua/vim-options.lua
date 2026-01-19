@@ -53,9 +53,9 @@ vim.api.nvim_set_keymap("n", "<ScrollWheelDown>", "2j", { noremap = true })
 -- print("Spell language set to English")
 -- end, { desc = "Set spell language to English" })
 
---vim.diagnostic.config({
---  virtual_text = false,  -- Disable inline errors
---  signs = true,          -- Keep signs in the gutter
---  underline = true,      -- Keep underline for errors
---})
---
+vim.diagnostic.config({
+  virtual_text = true,   -- Enable inline errors
+  signs = true,          -- Keep signs in the gutter
+  underline = true,      -- Keep underline for errors
+})
+

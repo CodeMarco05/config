@@ -18,6 +18,9 @@ return {
 				["markdown"] = true,
 				[".env"] = false,
 			}
+
+			-- Custom keybinding for accepting Copilot suggestions with Ctrl+Y (exclusive)
+			vim.keymap.set("i", "<C-y>", 'copilot#Accept("")', { expr = true, replace_keycodes = false, silent = true })
 		end,
 	},
 }
