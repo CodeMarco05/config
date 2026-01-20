@@ -59,3 +59,14 @@ vim.diagnostic.config({
   underline = true,      -- Keep underline for errors
 })
 
+-- Toggle transparent background
+vim.g.transparent_enabled = true
+vim.keymap.set("n", "<Leader>bt", function()
+	vim.g.transparent_enabled = not vim.g.transparent_enabled
+	require("everforest").setup({
+		transparent_background_level = vim.g.transparent_enabled and 1 or 0,
+	})
+	require("everforest").load()
+	print("Transparency: " .. (vim.g.transparent_enabled and "enabled" or "disabled"))
+end, { noremap = true, silent = true, desc = "Toggle transparent background" })
+

@@ -55,9 +55,9 @@ return {
 		-- Optional; default configuration will be used if setup isn't called.
 		config = function()
 			require("everforest").setup({
-				-- Your config here
+				transparent_background_level = vim.g.transparent_enabled and 1 or 0,
 			})
-      require("everforest").load()
+			require("everforest").load()
 		end,
 	},
 }
