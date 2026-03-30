@@ -16,6 +16,7 @@ return {
 					"clangd",
 					"jdtls",
 					"gopls",
+					"tailwindcss",
 					--"sqlls",
 				},
 			})
@@ -65,6 +66,10 @@ return {
 				},
 			}
 
+			vim.lsp.config.tailwindcss = {
+				capabilities = capabilities,
+			}
+
 			--vim.lsp.config.sqlls = {
 			--	capabilities = capabilities,
 			--}
@@ -77,6 +82,7 @@ return {
 				"clangd",
 				"jdtls",
 				"gopls",
+				"tailwindcss",
 				--"sqlls",
 			})
 
