@@ -11,6 +11,8 @@ return {
                 "stylua",
                 "shfmt",
                 "clangd",
+                "yaml-language-server",
+                "helm-ls",
             },
         },
         ---@param opts MasonSettings | {ensure_installed: string[]}
